@@ -263,3 +263,28 @@ console.log("The total number of servings are: ", totalServings)
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
+const problemEleven = () => {
+    let resultArray = []
+    for(let i = 0; i < dishes.length; i++){
+        if(dishes[i-1] && dishes[i+1]){//check to see if previous element and next element exist
+            if(dishes[i].cuisine !== dishes[i-1].cuisine && dishes[i].cuisine !== dishes[i+1].cuisine){//compare cuisine of current element with cuisine of previous, next element
+                resultArray.push(dishes[i])
+            }
+        }
+        if(!dishes[i+1]){//if no next element, only have to compare with previous element
+            if(dishes[i].cuisine !== dishes[i-1].cuisine){
+                resultArray.push(dishes[i])
+            }
+        }
+        if(!dishes[i-1]){//if no previous element, only have to check next element
+            if(dishes[i].cuisine !== dishes[i+1].cuisine){
+                resultArray.push(dishes[i])
+            }
+        }
+    }
+    return resultArray
+}
+
+//test
+let uniqueCuisines = problemEleven()
+console.log("The dishes with unique cuisines are: ", uniqueCuisines)
