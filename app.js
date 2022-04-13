@@ -127,18 +127,27 @@ console.log('Mexican Foods: ', mexicanFood)
 //Filter
 
 function problemOne(){
-
-    let results;
-
-
-    return results;
+    let results = dishes.filter( function (element) { return element.cuisine === "Vegetarian" ? true : false }) // conditional (ternary) operator
+    return results
 }
-
+//test
+let vegetarianFood = problemOne()
+console.log("Italian foods: ", vegetarianFood)
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function problemTwo(){
+    let results = dishes.filter( function(element){return (element.cuisine === "Italian" && element.servings > 5) ? true : false})
+    return results    
+}
+
+//test
+let italianServingSizeOverFive = problemTwo()
+console.log("Italian foods that serve over 5 people: ", italianServingSizeOverFive)
+
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
+
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
