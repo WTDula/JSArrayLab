@@ -147,11 +147,25 @@ console.log("Italian foods that serve over 5 people: ", italianServingSizeOverFi
 
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
+const problemThree = () => { //arrow function
+    let results = dishes.filter((element) => {return element.id === element.servings ? true : false})//test to see if arrow function works (it does)
+    return results
+}
 
+//test
+let idMatchesServings = problemThree()
+console.log("The dishes whose id matches their serving size are: ", idMatchesServings)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
+const problemFour = () => {
+    let results = dishes.filter((element) => {return element.servings % 2 === 0 ? true : false})
+    return results
+}
 
+//test
+let evenServings = problemFour()
+console.log("The dishes whose servings are even are: ", evenServings)
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
 
