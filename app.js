@@ -133,6 +133,7 @@ function problemOne(){
 //test
 let vegetarianFood = problemOne()
 console.log("Italian foods: ", vegetarianFood)
+
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
@@ -166,11 +167,36 @@ const problemFour = () => {
 //test
 let evenServings = problemFour()
 console.log("The dishes whose servings are even are: ", evenServings)
+
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
+const problemFive = () => {
+    let results = dishes.filter((element) => {
+        if(element.ingredients.includes("tomato") && element.ingredients.includes("cheese")){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    return results
+}
+
+//test
+let dishesWithTomatoAndCheese = problemFive()
+console.log("The dishes containing both tomato and cheese are: ", dishesWithTomatoAndCheese)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+const problemSixA = () => {
+    let result = dishes.map((element) => {return element.cuisine})
+    return result
+}
+
+//test
+let typesOfCuisines = problemSixA()
+console.log("The types of cuisines are: ", typesOfCuisines)
+
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
