@@ -199,6 +199,15 @@ console.log("The types of cuisines are: ", typesOfCuisines)
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+const problemSixB = (callback) => {
+    let result = callback()
+    let uniqueResult = result.filter((element, index) => {return result.indexOf(element) === index ? true : false})
+    return uniqueResult
+}
+
+//test
+let uniqueTypesOfCuisines = problemSixB(problemSixA)
+console.log("The distinct types of cuisines are: ", uniqueTypesOfCuisines)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
