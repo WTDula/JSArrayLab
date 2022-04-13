@@ -202,9 +202,26 @@ console.log("The types of cuisines are: ", typesOfCuisines)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
+const problemSeven = (arrayToBeModded) => {
+    let result = arrayToBeModded.map((element) => {return element.cuisine + " " + element.name})
+    return result
+}
+
+//test
+let typeOfDish = problemSeven(dishes)
+console.log("The dishes are: ", typeOfDish)
 
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
-//Map, Filter
+//Map, Filter,  problemOne returns vegetarian dishes in array
+const problemEight = (callbackFunctionOne, callbackFunctionTwo) => {
+    let resultOne = callbackFunctionOne() // after executing, result is array with vegetarian as cuisine type
+    result = callbackFunctionTwo(resultOne)
+    return result
+}
+
+//test
+let vegetarianDishes = problemEight(problemOne, problemSeven)
+console.log("The Vegetarian dishes are: ", vegetarianDishes)
 
 
 //BONUS
