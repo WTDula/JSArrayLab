@@ -237,9 +237,29 @@ console.log("The Vegetarian dishes are: ", vegetarianDishes)
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+const problemNine = () => {
+    let result = dishes.filter((element) => {return element.ingredients.includes("chickpea") ? true : false})
+    return result
+}
+
+//test
+let containsChickpea = problemNine()
+console.log("The dishes containing chickpea are: ", containsChickpea)
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+const problemTen = () => {
+    let servingsArray = []
+    for(let i = 0; i < dishes.length; i++){
+        servingsArray.push(dishes[i].servings)
+    }
+    let result = servingsArray.reduce(function(total, element) {return total + element})
+    return result
+}
+
+//test
+let totalServings = problemTen()
+console.log("The total number of servings are: ", totalServings)
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
